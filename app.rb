@@ -14,7 +14,7 @@ get("/dice/2/6") do
     @rolls.push(die)
   end
 
-  erb(:two_six)
+  erb(:two_six, { :layout=> :elephant } ) 
 end
 
 get("/dice/2/10") do
@@ -51,4 +51,16 @@ get("/dice/5/4") do
   end
 
   erb(:five_four)
+end
+
+get("/dynamic/50/6") do
+   @rolls = []
+
+   50.times do
+      die = rand(1..6)
+
+      @rolls.push(die) 
+  end
+
+  "#{@rolls}"
 end
