@@ -62,5 +62,5 @@ get("/dynamic/50/6") do
       @rolls.push(die) 
   end
 
-  "#{@rolls}"
+  erb(:flexible)
 end
